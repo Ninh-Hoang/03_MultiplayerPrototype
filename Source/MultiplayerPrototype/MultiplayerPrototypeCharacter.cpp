@@ -57,6 +57,14 @@ AMultiplayerPrototypeCharacter::AMultiplayerPrototypeCharacter()
 	PrimaryActorTick.bStartWithTickEnabled = true;
 }
 
+void AMultiplayerPrototypeCharacter::BeginPlay() {
+	Super::BeginPlay();
+	if (HasAuthority()) {
+		SetReplicates(true);
+		SetReplicateMovement(true);
+	}
+}
+
 void AMultiplayerPrototypeCharacter::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
