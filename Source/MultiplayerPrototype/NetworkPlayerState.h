@@ -20,6 +20,6 @@ class MULTIPLAYERPROTOTYPE_API ANetworkPlayerState : public APlayerState
 public:
 	ANetworkPlayerState();
 
-	UPROPERTY(Replicated)
+	UPROPERTY(Replicated, BlueprintReadWrite, Category = "Setup")
 	AServerSideCharacter* ServerSideCharacterRef;
 };
